@@ -1,0 +1,88 @@
+header {
+    background-color: black;
+    padding: 10px 10px 10px 120px;
+    /*margin-bottom: 75px;*/
+    box-sizing: border-box;
+    color: white;
+    font-family: "Open Sans", "sans-serif"
+}
+body {
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Open Sans", "sans-serif";
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    height: 100px;
+    width: 100%;
+}
+
+footer p, footer a {
+    text-decoration: none;
+    font-family: "Open Sans", "sans-serif";
+    text-align: center;
+}
+
+footer p {
+    color: white;
+}
+footer a {
+    color: yellow;
+}
+main {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.option {
+    width: 33%;
+    display: inline-block;
+    margin: 0 auto;
+    float: left
+}
+
+.option button {
+    width: 80%;
+    height: 40px;
+    margin: 25px auto;
+    display: block;
+}
+
+button {
+    background-color: black;
+    border-radius: 0;
+    border: none;
+    color: white;
+    font-family: "Open Sans", "sans-serif";
+    font-size: 20px;
+    /*text-transform: uppercase;*/
+    letter-spacing: 0.04em;
+}
+
+#jsOutput {
+    font-family: "Open Sans", "sans-serif";
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.hide {
+    display: none;
+}
+.option h1 {
+    text-align: center;
+    height: 40px;
+}
+.player {
+    float: left;
+}
+.computer {
+    float: right;
+}

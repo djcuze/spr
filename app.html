@@ -4,100 +4,31 @@
     <title>Rock, Paper, Scissors</title>
     <script type="application/javascript" src="app.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-<style>
-    header {
-        background-color: black;
-        padding: 10px 10px 10px 120px;
-        margin-bottom: 75px;
-        box-sizing: border-box;
-        color: white;
-        font-family: "Open Sans", "sans-serif"
-    }
-    body {
-        position: relative;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        background-color: black;
-        height: 100px;
-        width: 100%;
-    }
-
-    footer p, footer a {
-        color: white;
-        text-decoration: none;
-        font-family: "Open Sans", "sans-serif";
-        text-align: center;
-    }
-
-    main {
-        width: 100%;
-        max-width: 980px;
-        margin: 0 auto;
-    }
-
-    .option {
-        width: 33%;
-        display: inline-block;
-        margin: 0 auto;
-    }
-
-    .option button {
-        width: 80%;
-        height: 40px;
-        margin: 25px auto;
-        display: block;
-    }
-
-    button {
-        background-color: black;
-        border-radius: 0;
-        border: none;
-        color: white;
-        font-family: "Open Sans", "sans-serif";
-        font-size: 20px;
-        /*text-transform: uppercase;*/
-        letter-spacing: 0.04em;
-    }
-
-    #jsOutput {
-        font-family: "Open Sans", "sans-serif";
-        text-align: center;
-        text-transform: capitalize;
-    }
-
-    .hide {
-        display: none;
-    }
-</style>
 <body>
 <header>
     <h1>Scissors, Paper & Rock</h1>
 </header>
 <main>
     <div class="option" id="scissors" >
+        <h1></h1>
         <img src="scissors.svg" alt="Choose Scissors"/>
         <button onclick="userChoice = 'scissors'; getChoices()">Scissors</button>
     </div>
     <div class="option" id="paper">
+        <h1></h1>
         <img src="paper.svg" alt="Choose Paper"/>
         <button onclick="userChoice = 'paper'; getChoices()">Paper</button>
     </div>
     <div class="option" id="rock">
+        <h1></h1>
         <img src="rock.svg" alt="Choose Rock"/>
         <button onclick="userChoice = 'rock'; getChoices()">Rock</button>
     </div>
 </main>
 <div>
-    <h1 id="jsOutput">Output Header!</h1>
+    <h1 id="jsOutput"></h1>
 </div>
 <footer>
     <p>Icons made by
