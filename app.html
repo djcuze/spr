@@ -2,16 +2,16 @@
 <html>
 <head>
     <title>Rock, Paper, Scissors</title>
-    <script type="application/javascript" src="app.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Righteous" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <header>
     <h1>Scissors, Paper & Rock</h1>
+    <h2>Score: <span id="hiScore"></span></h2>
 </header>
 <main>
-    <div class="option" id="scissors" >
+    <div class="option" id="scissors">
         <h1></h1>
         <img src="scissors.svg" alt="Choose Scissors"/>
         <button onclick="userChoice = 'scissors'; getChoices()">Scissors</button>
@@ -26,10 +26,11 @@
         <img src="rock.svg" alt="Choose Rock"/>
         <button onclick="userChoice = 'rock'; getChoices()">Rock</button>
     </div>
+    <div id="alert" class="hide">
+        <h1 id="jsOutput"></h1>
+        <a id="runProgram" onclick="resetElements()">Play Again</a>
+    </div>
 </main>
-<div>
-    <h1 id="jsOutput"></h1>
-</div>
 <footer>
     <p>Icons made by
         <a href="http://www.flaticon.com/authors/madebyoliver">Madebyoliver</a>
@@ -37,5 +38,6 @@
         <a href="http://www.flaticon.com">www.flaticon.com</a>
     </p>
 </footer>
+<script type="application/javascript" src="app.js"></script>
 </body>
 </html>

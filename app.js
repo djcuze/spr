@@ -1,6 +1,14 @@
+score = 0;
+
 function getChoices() {
     var output = document.getElementById('jsOutput');
-    var buttons = document.getElementsByTagName('button');
+    var outputContainer = document.getElementById('alert');
+    buttons = document.getElementsByTagName('button');
+    var hiScore = document.getElementById('hiScore');
+
+    setTimeout(function () {
+        output.innerHTML = "You picked..." + userChoice;
+    }, 100);
 
     computerChoice = Math.random();
     console.log("Random number is:" + " " + computerChoice);
@@ -12,26 +20,37 @@ function getChoices() {
         computerChoice = "scissors";
     }
 
-    compare(userChoice, computerChoice);
+    setTimeout(function () {
+        output.innerHTML = "A.I. picked..." + computerChoice;
+    }, 1800);
 
+    // ADD DELAY
+    outputContainer.className += 'hide';
+    setTimeout(function () {
+        compare(userChoice, computerChoice);
+    }, 1800);
+    setTimeout(function() {
     output.innerHTML = result;
-
+        hiScore.innerHTML = score;
+    }, 3600);
     // Prevents buttons being clicked more than once
-    for ( i = 0; i < buttons.length; i++ ) {
+    for (i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
     }
+
 }
 
 function compare(choice1, choice2) {
     result = " ";
     hideElements();
     if (choice1 === choice2) {
-        console.log("The result is a tie!");
-        getChoices();
-    } else if (choice1 === "rock") { // User selects Rock
-
+        console.log("The result is a tie!"); // Handling a Draw
+        resetElements();                    // Calls the resetElements Function
+        result = "The result is a tie!";
+    } else if (choice1 === "rock") {         // User selects Rock
         if (choice2 === "scissors") {
             result = "rock wins!";
+            score++;
         } else {
             result = "paper wins!"
         }
@@ -39,11 +58,13 @@ function compare(choice1, choice2) {
         if (choice2 === "rock") {
             result = "rock wins!";
         } else {
-            result = "scissors wins!"
+            result = "scissors wins!";
+            score++;
         }
     } else if (choice1 === "paper") {       // User selects Paper
         if (choice2 === "rock") {
             result = "paper wins!";
+            score++;
         } else {
             result = "scissors wins!"
         }
@@ -52,26 +73,10 @@ function compare(choice1, choice2) {
     }
 }
 
-/*              |1. Select Choice
-                |2. Remove other choices from view
-
- INSERT A DELAY -- !
-
- 3. Countdown from 3 to 1
- 4. Display Computer's choice
- 5. Display Win/Lose screen
- 6. Handle a Draw
- 6. Add to Score if won | Reset score to zero if lose
- */
-
 function hideElements() {   // This hides unselected elements from view.
-    var scissors = document.getElementById('scissors');
-    var paper = document.getElementById('paper');
-    var rock = document.getElementById('rock');
-
-
-    var man =  document.getElementById('man');
-    var machine =  document.getElementById('machine');
+    scissors = document.getElementById('scissors');
+    paper = document.getElementById('paper');
+    rock = document.getElementById('rock');
 
     if (userChoice === "scissors") {
         scissors.className += ' player';
@@ -102,3 +107,15 @@ function hideElements() {   // This hides unselected elements from view.
         }
     }
 }
+
+function resetElements() {
+    var alert = document.getElementById('alert');
+    scissors.className = 'option';
+    rock.className = 'option';
+    paper.className = 'option';
+    alert.className = 'hide';
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+    }
+}
+
